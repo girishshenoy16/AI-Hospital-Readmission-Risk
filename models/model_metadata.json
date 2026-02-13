@@ -1,0 +1,19 @@
+{
+    "model_name": "XGBoost Readmission Risk Model",
+    "model_type": "XGBClassifier",
+    "training_date": "2026-02-05T17:15:14.647196",
+    "roc_auc": 0.6822,
+    "threshold": 0.25,
+    "intended_use": "Readmission risk stratification (not diagnosis)",
+    "features_count": 72,
+    "model_parameters": {
+        "n_estimators": 200,
+        "max_depth": 5,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "scale_pos_weight": 8,
+        "eval_metric": "logloss",
+        "random_state": 42
+    }
+}
