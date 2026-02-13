@@ -181,7 +181,7 @@ This ensures balanced, actionable categories even when probabilities are skewed.
 ## Clone repository:
 
 ```
-git clone https://github.com/girishshenoy16/AI-Hospital-Readmission-Risk
+git clone https://github.com/girishshenoy16/AI-Hospital-Readmission-Risk.git
 cd AI-Hospital-Readmission-Risk
 ```
 
