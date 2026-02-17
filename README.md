@@ -238,15 +238,6 @@ streamlit run dashboard/app.py
 
 ---
 
-## 👤 Author
-
-**Girish Shenoy**
-Computer Science Student | Aspiring AI & Business Analyst
-
-This project was built as an **industry-oriented portfolio project**, emphasizing real-world healthcare analytics, explainability, and execution quality.
-
----
-
 ## ⭐ Final Note
 
 This project demonstrates how **applied AI** can support healthcare decision-making by combining predictive modeling, interpretability, and practical visualization — aligned with real hospital workflows.
