@@ -1,0 +1,5 @@
+🔴 **Very High Readmission Risk Detected**
+
+This patient has a **94.5% predicted risk** of readmission.
+
+The model identified **num_medications, number_diagnoses, age_0_10** as the most critical contributors to readmission risk. Immediate intervention, intensive care coordination, and proactive post-discharge follow-up are strongly recommended.

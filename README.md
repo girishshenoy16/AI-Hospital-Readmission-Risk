@@ -1,70 +1,174 @@
-# 🏥 AI-Driven Hospital Readmission Risk Prediction System
+# 🏥 AI Hospital Readmission Risk Analytics
 
-An **end-to-end Artificial Intelligence project** that predicts **30-day hospital readmission risk** and presents **actionable, explainable insights** through an interactive dashboard for healthcare decision support.
+An end-to-end AI-powered healthcare analytics platform designed to predict 30-day hospital readmission risk, identify high-risk patients, and support proactive clinical intervention strategies using machine learning and explainable AI.
 
-This system is designed as a **risk-screening and prioritization tool**, not a diagnostic system.
-
----
-
-## 📌 Project Overview
-
-Hospital readmissions increase healthcare costs, strain hospital resources, and negatively impact patient outcomes.
-This project builds an AI-based system that helps healthcare teams:
-
-* Identify patients at **high risk of readmission**
-* Prioritize follow-up and care-coordination efforts
-* Support **data-driven clinical operations**
-
-The solution emphasizes **interpretability, recall, and real-world usability**.
+This project combines predictive modeling, healthcare analytics, explainable AI (XAI), and interactive dashboard visualization to simulate how hospitals can reduce preventable readmissions and improve operational efficiency.
 
 ---
 
-## 🎯 Business Problem
+# 🚀 Project Overview
 
-Hospitals need to proactively identify patients likely to be readmitted within 30 days, but:
+Hospital readmissions are one of the most critical operational and financial challenges in healthcare systems.
 
-* Patient data is noisy and highly imbalanced
-* Rule-based systems miss complex risk patterns
-* Clinical teams have limited resources
+This platform demonstrates how AI can:
 
-A predictive, explainable risk-stratification system is required to support effective care planning.
+* identify patients at high risk of readmission
+* prioritize intervention workflows
+* improve discharge planning
+* support clinical decision-making
+* reduce avoidable healthcare costs
 
----
+The system includes:
 
-## ✅ Solution Highlights
-
-* 📊 Predicts **patient-level readmission risk probabilities**
-* 🚦 Stratifies patients into **Low → Very High risk categories**
-* 🧠 Provides **SHAP-based explainability** at patient level
-* 🖥️ Interactive **Streamlit dashboard** for analysts and care teams
-* 🔁 Complete ML pipeline: preprocessing → modeling → evaluation → visualization
-* 📄 Model metadata for traceability and governance
-
----
-
-## 🧱 System Architecture
-
-```
-Raw Hospital Data
-        ↓
-Data Cleaning & Preprocessing
-        ↓
-Feature Engineering
-        ↓
-XGBoost Model Training
-        ↓
-Risk Stratification (Quantile-based)
-        ↓
-Explainability (SHAP)
-        ↓
-Streamlit Dashboard
-```
+* machine learning risk prediction
+* patient-level scoring
+* SHAP explainability
+* risk segmentation
+* healthcare dashboard analytics
+* operational intelligence reporting
 
 ---
 
-## 📂 Project Structure
+# 🧩 Key Capabilities
 
-```
+* Predict 30-day hospital readmission risk
+* Prioritize high-risk patients for intervention
+* Generate explainable AI insights using SHAP
+* Support healthcare resource optimization
+* Improve discharge planning intelligence
+* Enable patient-level risk segmentation
+* Assist operational healthcare analytics teams
+
+---
+
+# 📊 Dashboard Preview
+
+## 🏥 Hospital Readmission Risk Dashboard
+
+![Dashboard Overview](screenshots/risk_distribution.png)
+
+---
+
+## 🚨 High-Risk Patient Prioritization
+
+![High Risk Patients](screenshots/high_risk_patients.png)
+
+---
+
+## 🧠 Explainable AI — SHAP Analysis
+
+![SHAP Explainability](screenshots/shap_explainability.png)
+
+---
+
+## 📋 Patient-Level Risk Scores
+
+![Patient Risk Scores](screenshots/patient_risk_scores.png)
+
+---
+
+# ⚙️ Platform Features
+
+## 🤖 AI Prediction Engine
+
+* XGBoost-based classification model
+* 30-day readmission prediction
+* patient-level risk scoring
+* risk probability estimation
+* threshold-based classification
+* healthcare-oriented recall optimization
+
+---
+
+## 🧠 Explainable AI (XAI)
+
+* SHAP explainability integration
+* patient-level feature attribution
+* interpretable risk insights
+* transparent prediction analysis
+* clinical decision support visibility
+
+---
+
+## 📈 Healthcare Analytics
+
+* readmission risk distribution
+* patient segmentation
+* risk category analysis
+* high-risk patient ranking
+* operational healthcare insights
+* clinical workflow prioritization
+
+---
+
+## 📊 Interactive Dashboard
+
+Built using Streamlit with:
+
+* dynamic risk threshold controls
+* patient ranking interface
+* SHAP explainability visualization
+* interactive filtering
+* healthcare intelligence reporting
+* downloadable outputs
+
+---
+
+# 📉 Model Performance
+
+Evaluation metrics used:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* ROC-AUC
+
+The XGBoost model was optimized for healthcare risk prioritization and high recall detection to minimize missed high-risk patients.
+
+---
+
+# 🏥 Healthcare Use Cases
+
+This platform can support:
+
+* hospital discharge planning
+* patient intervention prioritization
+* care coordination teams
+* insurance risk analytics
+* population health management
+* clinical operations monitoring
+* healthcare analytics transformation initiatives
+
+---
+
+# 🛠️ Tech Stack
+
+## Programming & Frameworks
+
+* Python
+* Streamlit
+
+## Machine Learning
+
+* XGBoost
+* Scikit-learn
+
+## Data Analytics
+
+* Pandas
+* NumPy
+
+## Visualization
+
+* Matplotlib
+* SHAP
+
+---
+
+# 📂 Project Structure
+
+```bash
 AI-Hospital-Readmission-Risk/
 │
 ├── data/
@@ -75,7 +179,7 @@ AI-Hospital-Readmission-Risk/
 │   ├── preprocessing.py
 │   ├── features.py
 │   ├── train.py
-│   ├── evaluate.py
+│   └── evaluate.py
 │
 ├── dashboard/
 │   └── app.py
@@ -83,6 +187,21 @@ AI-Hospital-Readmission-Risk/
 ├── models/
 │   ├── xgb_classifier_readmission_model.pkl
 │   └── model_metadata.json
+│
+├── screenshots/
+│   ├── risk_distribution.png
+│   ├── patient_risk_scores.png
+│   ├── high_risk_patients.png
+│   └── shap_explainability.png
+│
+├── outputs/
+│   └── visuals/
+│       ├── risk_distribution.png
+│       ├── shap_explainability.png
+│       ├── patient_count_by_risk.csv
+│       ├── patient_risk_scores.csv
+│       ├── high_risk_patients.csv
+│       └── patient_risk_summary.txt
 │
 ├── reports/
 │   └── executive_summary.md
@@ -94,122 +213,26 @@ AI-Hospital-Readmission-Risk/
 
 ---
 
-## 📊 Data Description
+# ▶️ Installation & Setup
 
-* **Dataset**: UCI Diabetes 130-US Hospitals Dataset
-* **Size**: ~100,000 hospital encounters
-* **Target**: Readmission within 30 days
-* **Key Challenges**:
+## 1️⃣ Clone Repository
 
-  * Highly imbalanced target variable
-  * High-cardinality clinical codes
-  * Missing and encoded values (`?`)
-
----
-
-## ⚙️ Machine Learning Approach
-
-* **Model**: XGBoost Classifier
-* **Why XGBoost?**
-
-  * Strong performance on tabular healthcare data
-  * Handles non-linear relationships
-  * Widely used in industry
-
-### Key Design Decisions
-
-* Optimized for **recall**, not accuracy
-* Risk-based thresholding
-* Feature selection focused on interpretability
-* High-cardinality diagnosis & medication codes intentionally excluded
-
----
-
-## 📈 Model Evaluation (Risk-Optimized)
-
-```
-ROC-AUC Score: ~0.68
-High-Risk Recall: ~99%
-Accuracy: ~0.15 (intentionally deprioritized)
-```
-
-### Interpretation
-
-* High recall ensures **very few high-risk patients are missed**
-* Lower accuracy is expected due to class imbalance and aggressive screening
-* This aligns with **real healthcare screening use cases**
-
-> ⚠️ In healthcare, missing a high-risk patient is costlier than false positives.
-
----
-
-## 🚦 Risk Stratification
-
-Patients are grouped using **quantile-based risk bands**:
-
-| Risk Category     | Meaning                |
-| ----------------- | ---------------------- |
-| 🟢 Low Risk       | Routine follow-up      |
-| 🟡 Medium Risk    | Monitor                |
-| 🟠 High Risk      | Priority follow-up     |
-| 🔴 Very High Risk | Immediate intervention |
-
-This ensures balanced, actionable categories even when probabilities are skewed.
-
----
-
-## 🧠 Explainability (SHAP)
-
-* Patient-level SHAP explanations
-* Identifies top features contributing to readmission risk
-* Builds trust and transparency for healthcare stakeholders
-
----
-
-## 🖥️ Dashboard Features
-
-* 📊 Readmission risk distribution
-* 📋 Ranked patient-level risk tables
-* 🚨 High & very-high-risk patient identification
-* 🧠 SHAP-based explanations per patient
-* 🎨 Color-coded risk levels for intuitive understanding
-
----
-
-## ▶️ How to Run the Project
-
-## Clone repository:
-
-```
-git clone https://github.com/girishshenoy16/AI-Hospital-Readmission-Risk
+```bash
+git clone https://github.com/girishshenoy16/AI-Hospital-Readmission-Risk.git
 cd AI-Hospital-Readmission-Risk
 ```
 
+---
 
-### 1️⃣ Create virtual environment
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### 2️⃣ Install dependencies
+## 2️⃣ Install Dependencies
 
 ```bash
-python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run data pipeline
+---
 
-```bash
-python src/preprocessing.py
-python src/features.py
-python src/train.py
-python src/evaluate.py
-```
-
-### 4️⃣ Launch dashboard
+## 3️⃣ Run Dashboard
 
 ```bash
 streamlit run dashboard/app.py
@@ -217,36 +240,43 @@ streamlit run dashboard/app.py
 
 ---
 
-## 🧪 Outputs Generated
+# 📁 Outputs Generated
 
-* Cleaned & engineered datasets
-* Trained ML model
-* Model metadata (parameters, ROC-AUC, threshold)
-* Evaluation metrics
-* Interactive dashboard
-* Executive summary report
+The platform generates:
 
----
-
-## 🚀 Future Improvements
-
-* Integration with EHR systems
-* NLP on clinical notes
-* Real-time prediction APIs
-* Cost-sensitive optimization
-* Model monitoring & retraining pipelines
+* patient risk score reports
+* high-risk patient rankings
+* SHAP explainability visuals
+* healthcare analytics summaries
+* operational intelligence reports
+* downloadable CSV outputs
 
 ---
 
-## 👤 Author
+# 🌍 Why This Project Matters
 
-**Girish Shenoy**
-Computer Science Student | Aspiring AI & Business Analyst
+Healthcare organizations generate massive volumes of patient data, yet many operational decisions remain reactive.
 
-This project was built as an **industry-oriented portfolio project**, emphasizing real-world healthcare analytics, explainability, and execution quality.
+This project demonstrates how AI-powered healthcare analytics can transform raw clinical data into proactive patient risk intelligence, helping healthcare providers improve patient outcomes while reducing operational and financial strain.
 
 ---
 
-## ⭐ Final Note
+# 👨‍💻 Author
 
-This project demonstrates how **applied AI** can support healthcare decision-making by combining predictive modeling, interpretability, and practical visualization — aligned with real hospital workflows.
+Girish Shenoy
+
+Aspiring AI & Data Analytics Professional focused on:
+
+* Healthcare AI
+* Predictive Analytics
+* Business Intelligence
+* Explainable Machine Learning
+* AI-Powered Decision Systems
+
+---
+
+# 🙌 Acknowledgements
+
+Guided by Umesh Yadav Sir under EDC, IIT Delhi in association with the Indian Institute of Placement.
+
+---

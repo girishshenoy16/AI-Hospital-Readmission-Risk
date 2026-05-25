@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 import joblib
 import numpy as np
 import shap
+import os
 
+os.makedirs("outputs/visuals", exist_ok=True)
 
 RISK_COLORS = {
     "Very High Risk": "#c0392b",  # dark red
@@ -176,6 +178,13 @@ ax.grid(axis="x", linestyle="--", alpha=0.4)
 ax.invert_yaxis()  # High risk on top
 
 plt.tight_layout()
+
+fig.savefig(
+    "outputs/visuals/risk_distribution.png",
+    bbox_inches="tight",
+    dpi=300
+)
+
 st.pyplot(fig)
 
 
@@ -197,8 +206,21 @@ with st.expander("📋 View underlying risk data"):
         ]
     )
 
-    st.write(
-        results["Risk Category"].value_counts()
+    risk_summary = (
+        results["Risk Category"]
+        .value_counts()
+        .reset_index()
+    )
+
+    risk_summary.columns = ["Risk Category", "Count"]
+
+    # Display table
+    st.write(risk_summary)
+
+    # Save CSV
+    risk_summary.to_csv(
+        "outputs/visuals/patient_count_by_risk.csv",
+        index=False
     )
 
     st.subheader("🔍 Patient-Level Risk Scores")
@@ -235,6 +257,11 @@ with st.expander("📋 View underlying risk data"):
     display_patient_df = patient_df[
         ["Priority Rank", "Readmission Risk (%)", "Risk Category"]
     ].reset_index(drop=True)
+
+    display_patient_df.to_csv(
+        "outputs/visuals/patient_risk_scores.csv",
+        index=False
+    )
 
     # Display (no index, clean values)
     st.dataframe(
@@ -303,6 +330,11 @@ display_df = high_risk_df[
     ["Rank", "Readmission Risk (%)", "Risk Category"]
 ]
 
+display_df.to_csv(
+    "outputs/visuals/high_risk_patients.csv",
+    index=False
+)
+
 
 
 # ---------- Styling ----------
@@ -349,6 +381,13 @@ shap.waterfall_plot(
 )
 
 plt.tight_layout()
+
+fig.savefig(
+    "outputs/visuals/shap_explainability.png",
+    bbox_inches="tight",
+    dpi=300
+)
+
 st.pyplot(fig)
 
 
@@ -409,7 +448,12 @@ else:  # Low Risk
 
 
 # Display personalized Info Block
-st.info(message)
+with open(
+    "outputs/visuals/patient_risk_summary.txt",
+    "w",
+    encoding="utf-8"
+) as f:
+    f.write(message)
 
 # -----------------------------
 # Model interpretation note
