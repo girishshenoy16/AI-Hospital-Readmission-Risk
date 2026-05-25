@@ -232,7 +232,18 @@ pip install -r requirements.txt
 
 ---
 
-## 3️⃣ Run Dashboard
+## 3️⃣ Run data pipeline
+
+```bash
+python src/preprocessing.py
+python src/features.py
+python src/train.py
+python src/evaluate.py
+```
+
+---
+
+## 4️⃣ Launch dashboard
 
 ```bash
 streamlit run dashboard/app.py
